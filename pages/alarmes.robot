@@ -7,10 +7,12 @@ Test Setup       Abre App
 Test Teardown    Fecha App
 
 *** Test Cases ***
-Adicionar alarme
+Adicionar/Excluir alarme
     Clica no icone de alarme
-    Clica botao de adicionar alarme
-    Seleciona a hora do alarme
-    Coloca nome ao alarme
-    Escolhe toque do alarme
-    Repetir o alarme durante a semana
+    Clica botao de adicionar
+    Seleciona a hora
+    Coloca nome
+    Escolhe toque
+    Repete durante a semana
+    #Desabilita
+    Clica no icone para excluir
