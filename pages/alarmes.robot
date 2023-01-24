@@ -13,3 +13,4 @@ Adicionar alarme
     Seleciona a hora do alarme
     Coloca nome ao alarme
     Escolhe toque do alarme
+    Repetir o alarme durante a semana
