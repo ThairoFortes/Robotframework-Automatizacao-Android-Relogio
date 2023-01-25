@@ -1,7 +1,6 @@
 *** Settings ***
 Resource    ../resourse/base.robot
 Resource    ../resourse/steps.robot
-Resource    ../../NuBANK/nuclone-appium-robot/resource/base.robot
 
 Test Setup       Abre App
 Test Teardown    Fecha App
@@ -17,9 +16,17 @@ Adicionar/Excluir alarme
     #Desabilita alarme
     Clica no icone para excluir alarme
 
-Horario no mundo
+Pesquisar/Adicionar relogio de um local
     Clica no icone de relogio
     Clica no botao de adicionar horario
     Pesquisa pelo local
     Seleciona o local 
     Visualiza horario do local
+
+Cronometro
+    Clica no icone de cronometro
+    Digita o tempo de cronometro
+    Inicia o cronometro
+    Aguarda o tempo do cronometro
+    Para o alarme do cronometro
+    Exclui o cronometro
