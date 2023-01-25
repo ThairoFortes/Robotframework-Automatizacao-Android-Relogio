@@ -9,10 +9,17 @@ Test Teardown    Fecha App
 *** Test Cases ***
 Adicionar/Excluir alarme
     Clica no icone de alarme
-    Clica botao de adicionar
-    Seleciona a hora
-    Coloca nome
-    Escolhe toque
-    Repete durante a semana
-    #Desabilita
-    Clica no icone para excluir
+    Clica botao de adicionar alarme
+    Seleciona a hora do alarme
+    Coloca nome do alarme
+    Escolhe toque do alarme
+    Repete alarme durante a semana
+    #Desabilita alarme
+    Clica no icone para excluir alarme
+
+Horario no mundo
+    Clica no icone de relogio
+    Clica no botao de adicionar horario
+    Pesquisa pelo local
+    Seleciona o local 
+    Visualiza horario do local
