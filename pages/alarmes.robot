@@ -23,10 +23,19 @@ Pesquisar/Adicionar relogio de um local
     Seleciona o local 
     Visualiza horario do local
 
+Temporizador
+    Clica no icone de temporizador
+    Digita o tempo de temporizador
+    Inicia o temporizador
+    Aguarda o tempo do temporizador
+    Para o alarme do temporizador
+    Exclui o temporizador
+
 Cronometro
-    Clica no icone de cronometro
-    Digita o tempo de cronometro
+    Clica no icone de Cronometro
     Inicia o cronometro
-    Aguarda o tempo do cronometro
-    Para o alarme do cronometro
-    Exclui o cronometro
+    Pausa o cronometro
+    Zera o cronometro
+
+
+
