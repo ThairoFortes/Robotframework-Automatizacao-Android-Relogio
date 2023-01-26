@@ -64,7 +64,7 @@ Repete alarme durante a semana
     Log To Console    -> Repetindo alarme para semana...\n
     AppiumLibrary.Wait Until Element Is Visible    xpath=//android.widget.TextView[@content-desc="10:30"]    20
     AppiumLibrary.Click Element                    id=com.google.android.deskclock:id/repeat_onoff
-    
+    Sleep    1
     AppiumLibrary.Click Element                    xpath=//android.widget.CheckBox[@content-desc="domingo"]
     AppiumLibrary.Click Element                    xpath=//android.widget.CheckBox[@content-desc="sábado"]
 
@@ -73,7 +73,7 @@ Repete alarme durante a semana
 
 Desabilita alarme
     Log To Console    -> Desabitando alarme...\n
-    AppiumLibrary.Click Element    xpath=//android.widget.LinearLayout[@content-desc="10:30 Alarme"]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.Switch
+    AppiumLibrary.Click Element    xpath=//*[@text="ATIVAR"]
 
     Sleep    1
     Capture Page Screenshot
@@ -126,3 +126,18 @@ Visualiza horario do local
 
     Sleep    1
     Capture Page Screenshot
+
+Clica no icone de temporizador
+Digita o tempo de temporizador
+Inicia o temporizador
+Aguarda o tempo do temporizador
+Para o alarme do temporizador
+Exclui o temporizador
+
+
+
+
+Clica no icone de Cronometro
+Inicia o cronometro
+Pausa o cronometro
+Zera o cronometro

@@ -13,7 +13,7 @@ Adicionar/Excluir alarme
     Coloca nome do alarme
     Escolhe toque do alarme
     Repete alarme durante a semana
-    #Desabilita alarme
+    Desabilita alarme
     Clica no icone para excluir alarme
 
 Pesquisar/Adicionar relogio de um local
