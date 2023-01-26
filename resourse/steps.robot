@@ -128,14 +128,49 @@ Visualiza horario do local
     Capture Page Screenshot
 
 Clica no icone de temporizador
+    Log To Console    -> Clicando no icone de temporizador...\n
+    AppiumLibrary.Wait Until Element Is Visible    xpath=//android.widget.ImageView[@content-desc="Timer"]    20
+    AppiumLibrary.Click Element                    xpath=//android.widget.ImageView[@content-desc="Timer"]
+
+    Sleep    1
+    Capture Page Screenshot
+
 Digita o tempo de temporizador
+    Log To Console    -> Digitando o tempo de temporizador...\n
+    AppiumLibrary.Execute adb shell  input text  3
+
+    Sleep    1
+    Capture Page Screenshot
+
 Inicia o temporizador
+    Log To Console    -> Iniciando o temporizador...\n
+    AppiumLibrary.Wait Until Element Is Visible    id=com.google.android.deskclock:id/fab    20
+    AppiumLibrary.Click Element                    id=com.google.android.deskclock:id/fab
+    
+    Sleep    1
+    Capture Page Screenshot
+
 Aguarda o tempo do temporizador
+    Log To Console    -> Aguardando o tempo do temporizador...\n
+    Sleep    3
+    AppiumLibrary.Wait Until Element Is Visible    xpath=//android.view.View[@content-desc="-4 segundos"]    20
+
+    Capture Page Screenshot
+
 Para o alarme do temporizador
+    Log To Console    -> Parando o temporizador...\n
+    AppiumLibrary.Click Element                    xpath=//android.widget.ImageButton[@content-desc="Parar"]
+    
+    Sleep    1
+    Capture Page Screenshot
+
 Exclui o temporizador
-
-
-
+    Log To Console    -> Excluindo o temporizador...\n
+    AppiumLibrary.Wait Until Element Is Visible    id=com.google.android.deskclock:id/left_button    20
+    AppiumLibrary.Click Element                    id=com.google.android.deskclock:id/left_button
+    
+    Sleep    1
+    Capture Page Screenshot
 
 Clica no icone de Cronometro
 Inicia o cronometro
