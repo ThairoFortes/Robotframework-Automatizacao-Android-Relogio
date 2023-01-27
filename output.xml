@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.10.2 on win32)" generated="20230127 14:09:22.446" rpa="false" schemaversion="3">
+<suite id="s1" name="Cronometropage" source="c:\_Projetos\Clock\pages\cronometropage.robot">
+<test id="s1-t1" name="Cronometro" line="10">
+<kw name="Abre App" library="baseSteps" type="SETUP">
+<kw name="Log To Console" library="BuiltIn">
+<arg>\n-&gt; Abrindo App...\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230127 14:09:23.520" endtime="20230127 14:09:23.522"/>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=emulator</arg>
+<arg>appPackage=com.google.android.deskclock</arg>
+<arg>appActivity=com.android.deskclock.DeskClock</arg>
+<arg>autoGrantPermissions=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20230127 14:09:23.522" endtime="20230127 14:09:52.838"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.google.android.deskclock:id/toolbar</arg>
+<arg>10</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20230127 14:09:53.415" level="INFO">criteria is com.google.android.deskclock:id/toolbar</msg>
+<status status="PASS" starttime="20230127 14:09:52.839" endtime="20230127 14:09:53.419"/>
+</kw>
+<status status="PASS" starttime="20230127 14:09:23.519" endtime="20230127 14:09:53.420"/>
+</kw>
+<kw name="Clica no icone de Cronometro" library="cronometroSteps">
+<kw name="Log To Console" library="BuiltIn">
+<arg>-&gt; Entrando na tela de cronometro...\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230127 14:09:53.422" endtime="20230127 14:09:53.423"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>xpath=//android.widget.ImageView[@content-desc="Cronômetro"]</arg>
+<arg>20</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20230127 14:09:53.776" level="INFO">xpath criteria: //android.widget.ImageView[@content-desc="Cronômetro"]</msg>
+<status status="PASS" starttime="20230127 14:09:53.424" endtime="20230127 14:09:53.779"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.ImageView[@content-desc="Cronômetro"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230127 14:09:53.787" level="INFO">Clicking element 'xpath=//android.widget.ImageView[@content-desc="Cronômetro"]'.</msg>
+<msg timestamp="20230127 14:09:53.875" level="INFO">xpath criteria: //android.widget.ImageView[@content-desc="Cronômetro"]</msg>
+<status status="PASS" starttime="20230127 14:09:53.781" endtime="20230127 14:09:53.875"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230127 14:09:55.881" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230127 14:09:53.876" endtime="20230127 14:09:55.881"/>
+</kw>
+<kw name="Captura tela" library="baseSteps">
+<kw name="Get Current Date" library="DateTime">
+<var>${DATA}</var>
+<arg>result_format=%d-%m-%Y_%H.%M.%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230127 14:09:55.883" level="INFO">${DATA} = 27-01-2023_14.09.55</msg>
+<status status="PASS" starttime="20230127 14:09:55.882" endtime="20230127 14:09:55.883"/>
+</kw>
+<kw name="Pegar o nome do test-case" library="baseSteps">
+<var>${NOME_CASO_TESTE}</var>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${TEST NAME}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20230127 14:09:55.884" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:55.884" endtime="20230127 14:09:55.885"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:09:55.885" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:55.885" endtime="20230127 14:09:55.885"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>(</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:09:55.886" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:55.886" endtime="20230127 14:09:55.886"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>)</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:09:55.887" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:55.886" endtime="20230127 14:09:55.887"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>\"</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:09:55.888" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:55.887" endtime="20230127 14:09:55.888"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>:</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:09:55.889" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:55.888" endtime="20230127 14:09:55.889"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>\'</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:09:55.889" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:55.889" endtime="20230127 14:09:55.889"/>
+</kw>
+<msg timestamp="20230127 14:09:55.889" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:55.883" endtime="20230127 14:09:55.889"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${NOME_CASO_TESTE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230127 14:09:55.890" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:55.889" endtime="20230127 14:09:55.890"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${DATA}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20230127 14:09:56.194" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="27-01-2023_14.09.55.png"&gt;&lt;img src="27-01-2023_14.09.55.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230127 14:09:55.890" endtime="20230127 14:09:56.194"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${DATA_ATUAL}</var>
+<arg>result_format=%d-%m-%Y_%H.%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230127 14:09:56.197" level="INFO">${DATA_ATUAL} = 27-01-2023_14.09</msg>
+<status status="PASS" starttime="20230127 14:09:56.196" endtime="20230127 14:09:56.198"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${DATA_ATUAL}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230127 14:09:56.199" level="INFO">${DATA_ATUAL} = 27-01-2023_14.09</msg>
+<status status="PASS" starttime="20230127 14:09:56.198" endtime="20230127 14:09:56.199"/>
+</kw>
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${EXECDIR}\\evidencias\\${NOME_CASO_TESTE}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20230127 14:09:56.203" level="INFO" html="true">Created directory '&lt;a href="file://C:\_Projetos\Clock\evidencias\Cronometro"&gt;C:\_Projetos\Clock\evidencias\Cronometro&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230127 14:09:56.200" endtime="20230127 14:09:56.204"/>
+</kw>
+<kw name="Move Files" library="OperatingSystem">
+<arg>*.png</arg>
+<arg>${EXECDIR}\\evidencias\\${NOME_CASO_TESTE}</arg>
+<doc>Moves specified files to the target directory.</doc>
+<msg timestamp="20230127 14:09:56.212" level="INFO" html="true">Moved file from '&lt;a href="file://C:\_Projetos\Clock\27-01-2023_14.09.55.png"&gt;C:\_Projetos\Clock\27-01-2023_14.09.55.png&lt;/a&gt;' to '&lt;a href="file://C:\_Projetos\Clock\evidencias\Cronometro\27-01-2023_14.09.55.png"&gt;C:\_Projetos\Clock\evidencias\Cronometro\27-01-2023_14.09.55.png&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230127 14:09:56.204" endtime="20230127 14:09:56.213"/>
+</kw>
+<status status="PASS" starttime="20230127 14:09:55.882" endtime="20230127 14:09:56.215"/>
+</kw>
+<status status="PASS" starttime="20230127 14:09:53.421" endtime="20230127 14:09:56.215"/>
+</kw>
+<kw name="Inicia o cronometro" library="cronometroSteps">
+<kw name="Log To Console" library="BuiltIn">
+<arg>-&gt; Inciando o cronometro...\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230127 14:09:56.217" endtime="20230127 14:09:56.219"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.google.android.deskclock:id/fab</arg>
+<arg>20</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20230127 14:09:56.265" level="INFO">criteria is com.google.android.deskclock:id/fab</msg>
+<status status="PASS" starttime="20230127 14:09:56.219" endtime="20230127 14:09:56.266"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.google.android.deskclock:id/fab</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230127 14:09:56.271" level="INFO">Clicking element 'id=com.google.android.deskclock:id/fab'.</msg>
+<msg timestamp="20230127 14:09:56.339" level="INFO">criteria is com.google.android.deskclock:id/fab</msg>
+<status status="PASS" starttime="20230127 14:09:56.267" endtime="20230127 14:09:56.339"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230127 14:09:58.347" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230127 14:09:56.340" endtime="20230127 14:09:58.348"/>
+</kw>
+<kw name="Captura tela" library="baseSteps">
+<kw name="Get Current Date" library="DateTime">
+<var>${DATA}</var>
+<arg>result_format=%d-%m-%Y_%H.%M.%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230127 14:09:58.350" level="INFO">${DATA} = 27-01-2023_14.09.58</msg>
+<status status="PASS" starttime="20230127 14:09:58.349" endtime="20230127 14:09:58.350"/>
+</kw>
+<kw name="Pegar o nome do test-case" library="baseSteps">
+<var>${NOME_CASO_TESTE}</var>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${TEST NAME}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20230127 14:09:58.351" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:58.351" endtime="20230127 14:09:58.351"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:09:58.352" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:58.352" endtime="20230127 14:09:58.352"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>(</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:09:58.353" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:58.352" endtime="20230127 14:09:58.353"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>)</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:09:58.354" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:58.354" endtime="20230127 14:09:58.354"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>\"</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:09:58.356" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:58.355" endtime="20230127 14:09:58.356"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>:</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:09:58.357" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:58.356" endtime="20230127 14:09:58.357"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>\'</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:09:58.357" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:58.357" endtime="20230127 14:09:58.358"/>
+</kw>
+<msg timestamp="20230127 14:09:58.358" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:58.350" endtime="20230127 14:09:58.358"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${NOME_CASO_TESTE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230127 14:09:58.359" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:09:58.358" endtime="20230127 14:09:58.359"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${DATA}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20230127 14:09:58.735" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="27-01-2023_14.09.58.png"&gt;&lt;img src="27-01-2023_14.09.58.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230127 14:09:58.359" endtime="20230127 14:09:58.736"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${DATA_ATUAL}</var>
+<arg>result_format=%d-%m-%Y_%H.%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230127 14:09:58.737" level="INFO">${DATA_ATUAL} = 27-01-2023_14.09</msg>
+<status status="PASS" starttime="20230127 14:09:58.736" endtime="20230127 14:09:58.737"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${DATA_ATUAL}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230127 14:09:58.741" level="INFO">${DATA_ATUAL} = 27-01-2023_14.09</msg>
+<status status="PASS" starttime="20230127 14:09:58.738" endtime="20230127 14:09:58.741"/>
+</kw>
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${EXECDIR}\\evidencias\\${NOME_CASO_TESTE}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20230127 14:09:58.744" level="INFO" html="true">Directory '&lt;a href="file://C:\_Projetos\Clock\evidencias\Cronometro"&gt;C:\_Projetos\Clock\evidencias\Cronometro&lt;/a&gt;' already exists.</msg>
+<status status="PASS" starttime="20230127 14:09:58.742" endtime="20230127 14:09:58.745"/>
+</kw>
+<kw name="Move Files" library="OperatingSystem">
+<arg>*.png</arg>
+<arg>${EXECDIR}\\evidencias\\${NOME_CASO_TESTE}</arg>
+<doc>Moves specified files to the target directory.</doc>
+<msg timestamp="20230127 14:09:58.767" level="INFO" html="true">Moved file from '&lt;a href="file://C:\_Projetos\Clock\27-01-2023_14.09.58.png"&gt;C:\_Projetos\Clock\27-01-2023_14.09.58.png&lt;/a&gt;' to '&lt;a href="file://C:\_Projetos\Clock\evidencias\Cronometro\27-01-2023_14.09.58.png"&gt;C:\_Projetos\Clock\evidencias\Cronometro\27-01-2023_14.09.58.png&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230127 14:09:58.747" endtime="20230127 14:09:58.768"/>
+</kw>
+<status status="PASS" starttime="20230127 14:09:58.349" endtime="20230127 14:09:58.768"/>
+</kw>
+<status status="PASS" starttime="20230127 14:09:56.216" endtime="20230127 14:09:58.769"/>
+</kw>
+<kw name="Pausa o cronometro" library="cronometroSteps">
+<kw name="Log To Console" library="BuiltIn">
+<arg>-&gt; Pausando o cronometro...\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230127 14:09:58.772" endtime="20230127 14:09:58.776"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.google.android.deskclock:id/fab</arg>
+<arg>20</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20230127 14:09:58.935" level="INFO">criteria is com.google.android.deskclock:id/fab</msg>
+<status status="PASS" starttime="20230127 14:09:58.777" endtime="20230127 14:09:58.935"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.google.android.deskclock:id/fab</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230127 14:09:58.938" level="INFO">Clicking element 'id=com.google.android.deskclock:id/fab'.</msg>
+<msg timestamp="20230127 14:09:59.013" level="INFO">criteria is com.google.android.deskclock:id/fab</msg>
+<status status="PASS" starttime="20230127 14:09:58.936" endtime="20230127 14:09:59.014"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230127 14:10:01.016" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230127 14:09:59.015" endtime="20230127 14:10:01.016"/>
+</kw>
+<kw name="Captura tela" library="baseSteps">
+<kw name="Get Current Date" library="DateTime">
+<var>${DATA}</var>
+<arg>result_format=%d-%m-%Y_%H.%M.%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230127 14:10:01.018" level="INFO">${DATA} = 27-01-2023_14.10.01</msg>
+<status status="PASS" starttime="20230127 14:10:01.017" endtime="20230127 14:10:01.018"/>
+</kw>
+<kw name="Pegar o nome do test-case" library="baseSteps">
+<var>${NOME_CASO_TESTE}</var>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${TEST NAME}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20230127 14:10:01.019" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:01.019" endtime="20230127 14:10:01.020"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:10:01.021" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:01.020" endtime="20230127 14:10:01.021"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>(</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:10:01.021" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:01.021" endtime="20230127 14:10:01.021"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>)</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:10:01.023" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:01.021" endtime="20230127 14:10:01.023"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>\"</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:10:01.023" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:01.023" endtime="20230127 14:10:01.023"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>:</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:10:01.024" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:01.024" endtime="20230127 14:10:01.024"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>\'</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:10:01.024" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:01.024" endtime="20230127 14:10:01.024"/>
+</kw>
+<msg timestamp="20230127 14:10:01.024" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:01.019" endtime="20230127 14:10:01.024"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${NOME_CASO_TESTE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230127 14:10:01.025" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:01.025" endtime="20230127 14:10:01.025"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${DATA}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20230127 14:10:01.318" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="27-01-2023_14.10.01.png"&gt;&lt;img src="27-01-2023_14.10.01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230127 14:10:01.025" endtime="20230127 14:10:01.319"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${DATA_ATUAL}</var>
+<arg>result_format=%d-%m-%Y_%H.%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230127 14:10:01.320" level="INFO">${DATA_ATUAL} = 27-01-2023_14.10</msg>
+<status status="PASS" starttime="20230127 14:10:01.319" endtime="20230127 14:10:01.320"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${DATA_ATUAL}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230127 14:10:01.321" level="INFO">${DATA_ATUAL} = 27-01-2023_14.10</msg>
+<status status="PASS" starttime="20230127 14:10:01.320" endtime="20230127 14:10:01.321"/>
+</kw>
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${EXECDIR}\\evidencias\\${NOME_CASO_TESTE}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20230127 14:10:01.323" level="INFO" html="true">Directory '&lt;a href="file://C:\_Projetos\Clock\evidencias\Cronometro"&gt;C:\_Projetos\Clock\evidencias\Cronometro&lt;/a&gt;' already exists.</msg>
+<status status="PASS" starttime="20230127 14:10:01.322" endtime="20230127 14:10:01.323"/>
+</kw>
+<kw name="Move Files" library="OperatingSystem">
+<arg>*.png</arg>
+<arg>${EXECDIR}\\evidencias\\${NOME_CASO_TESTE}</arg>
+<doc>Moves specified files to the target directory.</doc>
+<msg timestamp="20230127 14:10:01.332" level="INFO" html="true">Moved file from '&lt;a href="file://C:\_Projetos\Clock\27-01-2023_14.10.01.png"&gt;C:\_Projetos\Clock\27-01-2023_14.10.01.png&lt;/a&gt;' to '&lt;a href="file://C:\_Projetos\Clock\evidencias\Cronometro\27-01-2023_14.10.01.png"&gt;C:\_Projetos\Clock\evidencias\Cronometro\27-01-2023_14.10.01.png&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230127 14:10:01.323" endtime="20230127 14:10:01.333"/>
+</kw>
+<status status="PASS" starttime="20230127 14:10:01.017" endtime="20230127 14:10:01.333"/>
+</kw>
+<status status="PASS" starttime="20230127 14:09:58.770" endtime="20230127 14:10:01.334"/>
+</kw>
+<kw name="Zera o cronometro" library="cronometroSteps">
+<kw name="Log To Console" library="BuiltIn">
+<arg>-&gt; Zerando o cronometro...\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230127 14:10:01.335" endtime="20230127 14:10:01.336"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.google.android.deskclock:id/left_button</arg>
+<arg>20</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20230127 14:10:01.526" level="INFO">criteria is com.google.android.deskclock:id/left_button</msg>
+<status status="PASS" starttime="20230127 14:10:01.337" endtime="20230127 14:10:01.527"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.google.android.deskclock:id/left_button</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230127 14:10:01.533" level="INFO">Clicking element 'id=com.google.android.deskclock:id/left_button'.</msg>
+<msg timestamp="20230127 14:10:01.585" level="INFO">criteria is com.google.android.deskclock:id/left_button</msg>
+<status status="PASS" starttime="20230127 14:10:01.528" endtime="20230127 14:10:01.585"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230127 14:10:03.597" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230127 14:10:01.586" endtime="20230127 14:10:03.597"/>
+</kw>
+<kw name="Captura tela" library="baseSteps">
+<kw name="Get Current Date" library="DateTime">
+<var>${DATA}</var>
+<arg>result_format=%d-%m-%Y_%H.%M.%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230127 14:10:03.600" level="INFO">${DATA} = 27-01-2023_14.10.03</msg>
+<status status="PASS" starttime="20230127 14:10:03.599" endtime="20230127 14:10:03.600"/>
+</kw>
+<kw name="Pegar o nome do test-case" library="baseSteps">
+<var>${NOME_CASO_TESTE}</var>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${TEST NAME}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20230127 14:10:03.602" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:03.601" endtime="20230127 14:10:03.602"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>${SPACE}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:10:03.603" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:03.602" endtime="20230127 14:10:03.603"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>(</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:10:03.604" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:03.603" endtime="20230127 14:10:03.604"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>)</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:10:03.605" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:03.604" endtime="20230127 14:10:03.605"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>\"</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:10:03.605" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:03.605" endtime="20230127 14:10:03.605"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>:</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:10:03.606" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:03.606" endtime="20230127 14:10:03.606"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${NOME_CASO_TESTE}</var>
+<arg>${NOME_CASO_TESTE}</arg>
+<arg>\'</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230127 14:10:03.607" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:03.606" endtime="20230127 14:10:03.607"/>
+</kw>
+<msg timestamp="20230127 14:10:03.607" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:03.601" endtime="20230127 14:10:03.607"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${NOME_CASO_TESTE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230127 14:10:03.608" level="INFO">${NOME_CASO_TESTE} = Cronometro</msg>
+<status status="PASS" starttime="20230127 14:10:03.608" endtime="20230127 14:10:03.608"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${DATA}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20230127 14:10:03.957" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="27-01-2023_14.10.03.png"&gt;&lt;img src="27-01-2023_14.10.03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230127 14:10:03.609" endtime="20230127 14:10:03.958"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${DATA_ATUAL}</var>
+<arg>result_format=%d-%m-%Y_%H.%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230127 14:10:03.959" level="INFO">${DATA_ATUAL} = 27-01-2023_14.10</msg>
+<status status="PASS" starttime="20230127 14:10:03.958" endtime="20230127 14:10:03.959"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${DATA_ATUAL}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230127 14:10:03.960" level="INFO">${DATA_ATUAL} = 27-01-2023_14.10</msg>
+<status status="PASS" starttime="20230127 14:10:03.960" endtime="20230127 14:10:03.961"/>
+</kw>
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${EXECDIR}\\evidencias\\${NOME_CASO_TESTE}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20230127 14:10:03.965" level="INFO" html="true">Directory '&lt;a href="file://C:\_Projetos\Clock\evidencias\Cronometro"&gt;C:\_Projetos\Clock\evidencias\Cronometro&lt;/a&gt;' already exists.</msg>
+<status status="PASS" starttime="20230127 14:10:03.961" endtime="20230127 14:10:03.966"/>
+</kw>
+<kw name="Move Files" library="OperatingSystem">
+<arg>*.png</arg>
+<arg>${EXECDIR}\\evidencias\\${NOME_CASO_TESTE}</arg>
+<doc>Moves specified files to the target directory.</doc>
+<msg timestamp="20230127 14:10:03.974" level="INFO" html="true">Moved file from '&lt;a href="file://C:\_Projetos\Clock\27-01-2023_14.10.03.png"&gt;C:\_Projetos\Clock\27-01-2023_14.10.03.png&lt;/a&gt;' to '&lt;a href="file://C:\_Projetos\Clock\evidencias\Cronometro\27-01-2023_14.10.03.png"&gt;C:\_Projetos\Clock\evidencias\Cronometro\27-01-2023_14.10.03.png&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230127 14:10:03.967" endtime="20230127 14:10:03.975"/>
+</kw>
+<status status="PASS" starttime="20230127 14:10:03.598" endtime="20230127 14:10:03.976"/>
+</kw>
+<status status="PASS" starttime="20230127 14:10:01.334" endtime="20230127 14:10:03.977"/>
+</kw>
+<kw name="Fecha App" library="baseSteps" type="TEARDOWN">
+<kw name="Log To Console" library="BuiltIn">
+<arg>-&gt; Fechando App...\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230127 14:10:03.986" endtime="20230127 14:10:03.987"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20230127 14:10:03.988" endtime="20230127 14:10:06.001"/>
+</kw>
+<status status="PASS" starttime="20230127 14:10:03.984" endtime="20230127 14:10:06.001"/>
+</kw>
+<status status="PASS" starttime="20230127 14:09:23.516" endtime="20230127 14:10:06.002"/>
+</test>
+<status status="PASS" starttime="20230127 14:09:22.459" endtime="20230127 14:10:06.005"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Cronometropage">Cronometropage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
