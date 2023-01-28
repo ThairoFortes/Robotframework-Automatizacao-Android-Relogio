@@ -1,3 +1,12 @@
+## 👨‍💻 Sobre o teste
+
+Modelei e automatizei alguns cenários de teste para testar o aplicativo nativo de Android com as funcionalidades de:
+
+- Alarme: Adiciona, nomeia, altera toque, repetição, desabilita e exclui o alarme
+- Relógio: Adiciona e visualiza relógio de outro local
+- Temporizador: Escolhe tempo, inicia, pausa e exclui temporizador
+- Cronômetro: Inicia, pausa e zera cronômetro
+
 ## 👨‍💻 Tecnologias
 
 Você vai precisar das seguintes ferramentas e tecnologias:
@@ -69,9 +78,6 @@ appium-doctor --android
 
 - Deve aprensentar um resultado similar ao da imagem abaixo:
 
-<h1 align="left">
-    <img alt="QAninja Academy" src=".github/doctor.png" width="100%" />
-</h1>
 
 ## 📱Appium Desktop
 
@@ -88,12 +94,8 @@ Instale o Appium Desktop Latest release (não faça download do Pre-release)
 
 ---
 
-<h1 align="left">
-    <img alt="QAninja Academy" src=".github/logo-qaninja.png" width="150px" />
-</h1>
 
-## 👨‍💻 Meu curso de Robot com Appium
+## 👨‍💻 O estudo e a prática são base para o conhecimento! 
 
-- [No Dojo da QA Ninja](https://qaninja.academy/curso/introducao-ao-appium-com-robot-framework/)
 
-Feito com ♥ in OZ :wave: [Saiba mais aqui!](https://qaninja.academy)
+Meu [LinkedIn](https://www.linkedin.com/in/thairo-fortes/)
