@@ -7,6 +7,8 @@ Test Teardown    Fecha App
 
 *** Test Cases ***
 Relogio
+    [Documentation]    Este cenário adiciona e visualiza relógio de outro local
+    [Tags]             relogio
     Clica no icone de relogio
     Clica no botao de adicionar relogio
     Pesquisa pelo local

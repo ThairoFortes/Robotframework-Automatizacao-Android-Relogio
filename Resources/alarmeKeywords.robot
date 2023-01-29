@@ -2,21 +2,24 @@
 Resource    baseKeywords.robot
 
 Library    AppiumLibrary
+Library    ScreenCapLibrary
+Library    AutoRecorder
 
 *** Keywords ***
-Clica no icone de alarme
+Clica no icone de alarme   
     Log To Console    -> Entrando na tela de alarmes...\n
     AppiumLibrary.Wait Until Element Is Visible    xpath=//android.widget.ImageView[@content-desc="Alarme"]    20
     AppiumLibrary.Click Element                    xpath=//android.widget.ImageView[@content-desc="Alarme"]
     
-    Sleep    2
+    Sleep    1
     Captura tela
+    
 Clica botao de adicionar alarme
     Log To Console    -> Clicando no boão para adicionar novo alarme...\n
     AppiumLibrary.Wait Until Element Is Visible    id=com.google.android.deskclock:id/fab    20
     AppiumLibrary.Click Element                    id=com.google.android.deskclock:id/fab
     
-    Sleep    2
+    Sleep    1
     Captura tela
 Seleciona a hora do alarme
      Log To Console    -> Selecionando a hora para o alarme...\n
@@ -29,7 +32,7 @@ Seleciona a hora do alarme
     AppiumLibrary.Wait Until Element Is Visible    id=android:id/button1    20
     AppiumLibrary.Click Element                    id=android:id/button1
     
-    Sleep    2
+    Sleep    1
     Captura tela
 Coloca nome do alarme
     Log To Console    -> Colocando nome no alarme...\n
@@ -42,7 +45,7 @@ Coloca nome do alarme
     AppiumLibrary.Wait Until Element Is Visible    id=android:id/button1    20
     AppiumLibrary.Click Element                    id=android:id/button1
     
-    Sleep    2
+    Sleep    1
     Captura tela
 Escolhe toque do alarme
     Log To Console    -> Escolhendo toque para o alarme...\n
@@ -55,7 +58,7 @@ Escolhe toque do alarme
     AppiumLibrary.Wait Until Element Is Visible    id=android:id/button1    20
     AppiumLibrary.Click Element                    id=android:id/button1
     
-    Sleep    2
+    Sleep    1
     Captura tela
 Repete alarme durante a semana
     Log To Console    -> Repetindo alarme para semana...\n
@@ -65,17 +68,17 @@ Repete alarme durante a semana
     AppiumLibrary.Click Element                    xpath=//android.widget.CheckBox[@content-desc="domingo"]
     AppiumLibrary.Click Element                    xpath=//android.widget.CheckBox[@content-desc="sábado"]
     
-    Sleep    2
+    Sleep    1
     Captura tela
 Desabilita alarme
-    Log To Console    -> Desabitando alarme...\n
+    Log To Console    -> Desabilitando alarme...\n
     AppiumLibrary.Click Element    xpath=//*[@text="ATIVAR"]
     
-    Sleep    2
+    Sleep    1
     Captura tela
 Clica no icone para excluir alarme
     Log To Console    -> Excluindo alarme...\n
     AppiumLibrary.Click Element    id=com.google.android.deskclock:id/delete
     
-    Sleep    2
+    Sleep    1
     Captura tela
